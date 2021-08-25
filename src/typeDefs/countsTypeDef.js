@@ -11,4 +11,4 @@ const countsTypeDefs = gql`
     }
 `;
 
-module.exports = accountTypeDefs; 
+module.exports = countsTypeDefs; 
