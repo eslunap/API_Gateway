@@ -6,7 +6,7 @@ const countsTypeDefs = gql`
         monto: Int
     }
     
-    type Query {
+    type Mutation {
         countByUserId(userId: String!): Count
     }
 `;
