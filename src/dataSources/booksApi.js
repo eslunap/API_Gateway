@@ -52,7 +52,7 @@ class booksApi extends RESTDataSource {
 
     }
 
-    async registerAuthor(editorial) {
+    async registerEditorials(editorial) {
         return await this.post ('/editorial',{...editorial});
 
     } 
