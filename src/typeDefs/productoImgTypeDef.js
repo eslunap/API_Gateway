@@ -1,19 +1,19 @@
 const { gql } = require('apollo-server');
 
 const productoImgTypeDefs = gql`
-    type Imagen  {
-        Imagen: String
+    type img  {
+        img: String
         
     }
 
-    input ImagenInput {
-        Imagen: String
+    input imgInput {
+        img: String
     }
 
     }
 
     extends type Mutation {
-        registerImagen(Imagen: ImagenInput): Imagen
+        registerimg(img: imgInput): img
 
     }
     `;
