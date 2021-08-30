@@ -6,6 +6,10 @@ const countsTypeDefs = gql`
         mensaje: String!
     }
 
+    input CountTransactionInput{
+        monto: Int!
+    }
+
     input CountInput {
         userId: String!
         monto: Int!
@@ -13,7 +17,7 @@ const countsTypeDefs = gql`
     
     type Mutation {
         createCount(count: CountInput): Message!
-        countByUserId: Message!
+        countByUserId(transaction: CountTransactionInput): Message!
     }
 `;
 
