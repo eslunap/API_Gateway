@@ -12,7 +12,8 @@ const countsTypeDefs = gql`
     }
     
     type Mutation {
-        countByUserId(count: CountInput): Message!
+        createCount(count: CountInput): Message!
+        countByUserId: Message!
     }
 `;
 
