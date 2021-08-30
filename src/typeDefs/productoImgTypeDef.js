@@ -12,10 +12,10 @@ const productoImgTypeDefs = gql`
 
     }
 
-    extends type Mutation {
+    extend type Mutation {
         registerimg(img: imgInput): img
 
     }
-    `;
+`;
 
 module.exports =  productoImgTypeDefs;

@@ -11,15 +11,15 @@ const editorialsTypeDefs = gql`
         nombre: String
     }
 
-    extends type Query  {
+    extend type Query  {
         editorialsBybook (): [Editorial]
 
     }
 
-    extends type Mutation {
+    extend type Mutation {
         registerEditorial(editorial: EditorialInput): Editorial
 
     }
-    `;
+`;
 
 module.exports =  editorialsTypeDefs;

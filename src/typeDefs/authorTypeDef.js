@@ -20,6 +20,6 @@ const authorsTypeDefs = gql`
         registerAuthor(author: AuthorInput): Author
 
     }
-    `;
+`;
 
 module.exports =  authorsTypeDefs;

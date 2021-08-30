@@ -11,15 +11,15 @@ const categoriasTypeDefs = gql`
         nombre: String
     }
 
-    extends type Query  {
+    extend type Query  {
         categoriasBybook (): [Categoria]
 
     }
 
-    extends type Mutation {
+    extend type Mutation {
         registerCategoria(categoria: CategoriaInput): Categoria
 
     }
-    `;
+`;
 
 module.exports =  categoriasTypeDefs;
