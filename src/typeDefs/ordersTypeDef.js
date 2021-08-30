@@ -7,7 +7,7 @@ const ordersTypeDefs = gql `
     }
     
     input OrderInput {
-        fecha:Date
+        fecha:String
         precio:Int
         cantidad:Int
         id_producto:Int

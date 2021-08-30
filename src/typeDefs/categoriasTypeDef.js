@@ -12,7 +12,7 @@ const categoriasTypeDefs = gql`
     }
 
     extend type Query  {
-        categoriasBybook (): [Categoria]
+        categoriasBybook: [Categoria]
 
     }
 

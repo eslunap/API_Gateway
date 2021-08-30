@@ -1,8 +1,8 @@
 const authorResolver = {
     Query: {
-        authorBybook: (_, {_}, {dataSources,userIdToken})=> {
+        authorsBybook: (_, __, {dataSources,userIdToken})=> {
             if (userId == userIdToken){
-                return dataSources.booksApi.authorBybook();
+                return dataSources.booksAPI.authorsBybook();
             }else{
                 return null
             }
@@ -10,8 +10,8 @@ const authorResolver = {
     },
     Mutation: {
         registerAuthor:(_, {author},{dataSources}) => {
-            if (userId == userIdToken){
-                return dataSources.booksApi.registerAuthor();
+            if (author.userId == userIdToken){
+                return dataSources.booksAPI.registerAuthor();
             }else{
                 return null
             }

@@ -1,8 +1,8 @@
 const categoriasResolver = {
     Query: {
-        categoriasBybook: (_, {_}, {dataSources,userIdToken})=> {
+        categoriasBybook: (_, __, {dataSources,userIdToken})=> {
             if (userId == userIdToken){
-                return dataSources.booksApi.categoriasBybook();
+                return dataSources.booksAPI.categoriasBybook();
             }else{
                 return null
             }
@@ -10,8 +10,8 @@ const categoriasResolver = {
     },
     Mutation: {
         registerCategoria:(_, {categoria},{dataSources}) => {
-            if (userId == userIdToken){
-                return dataSources.booksApi.registerCategoria();
+            if (categoria.userId == userIdToken){
+                return dataSources.booksAPI.registerCategoria();
             }else{
                 return null
             }

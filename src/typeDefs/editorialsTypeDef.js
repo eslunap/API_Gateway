@@ -12,7 +12,7 @@ const editorialsTypeDefs = gql`
     }
 
     extend type Query  {
-        editorialsBybook (): [Editorial]
+        editorialsBybook: [Editorial]
 
     }
 

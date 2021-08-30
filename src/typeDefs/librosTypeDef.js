@@ -23,7 +23,7 @@ const librosTypeDefs = gql`
     }
 
     extend type Query  {
-        librossBybook (): [Libros]
+        librossBybook : [Libros]
         libroBybookId (libroId: Int): Libros
 
     }

@@ -1,15 +1,15 @@
 const librosResolver = {
     Query: {
-        librossBybook: (_, {_}, {dataSources,userIdToken})=> {
+        librossBybook: (_, __, {dataSources,userIdToken})=> {
             if (userId == userIdToken){
-                return dataSources.booksApi.librossBybook();
+                return dataSources.booksAPI.librossBybook();
             }else{
                 return null
             }
         },
         libroBybookId: (_, {libroId}, {dataSources,userIdToken})=> {
-            if (userId == userIdToken){
-                return dataSources.booksApi.libroBybookId();
+            if (libroId.userId == userIdToken){
+                return dataSources.booksAPI.libroBybookId();
             }else{
                 return null
             }
@@ -17,7 +17,7 @@ const librosResolver = {
     },
     Mutation: {
         registerLibros:(_, {libros},{dataSources}) => {
-            if (userId == userIdToken){
+            if (libros.userId == userIdToken){
                 return dataSources.booksApi.registerLibros();
             }else{
                 return null

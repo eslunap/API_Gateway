@@ -10,8 +10,6 @@ const productoImgTypeDefs = gql`
         img: String
     }
 
-    }
-
     extend type Mutation {
         registerimg(img: imgInput): img
 

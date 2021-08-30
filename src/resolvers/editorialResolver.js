@@ -1,8 +1,8 @@
 const EditorialsResolver = {
     Query: {
-        editorialsBybook: (_, {_}, {dataSources,userIdToken})=> {
+        editorialsBybook: (_, __, {dataSources,userIdToken})=> {
             if (userId == userIdToken){
-                return dataSources.booksApi.editorialsBybook();
+                return dataSources.booksAPI.editorialsBybook();
             }else{
                 return null
             }
@@ -10,8 +10,8 @@ const EditorialsResolver = {
     },
     Mutation: {
         registerEditorial:(_, {Editorial},{dataSources}) => {
-            if (userId == userIdToken){
-                return dataSources.booksApi.registerEditorial();
+            if (Editorial.userId == userIdToken){
+                return dataSources.booksAPI.registerEditorial();
             }else{
                 return null
             }
