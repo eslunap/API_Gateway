@@ -5,7 +5,12 @@ const usersTypeDefs =gql`
 
     type Success{
         success: String!
-    }    
+    }
+    
+    type LoginSuccess{
+        success: String!
+        token: String
+    }
 
     input UserInput{
         nombre: String!
@@ -23,7 +28,7 @@ const usersTypeDefs =gql`
 
     type Mutation{
         createUser(user: UserInput): Success!
-        loginUser(login: UserLogin): Success!
+        loginUser(login: UserLogin): LoginSuccess!
     }
 
 `;
