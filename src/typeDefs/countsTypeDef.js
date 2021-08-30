@@ -15,7 +15,7 @@ const countsTypeDefs = gql`
         monto: Int!
     }
     
-    type Mutation {
+    extends type Mutation {
         createCount(count: CountInput): Message!
         countByUserId(transaction: CountTransactionInput): Message!
     }

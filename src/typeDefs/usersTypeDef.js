@@ -26,7 +26,7 @@ const usersTypeDefs =gql`
         password: String!
     }
 
-    type Mutation{
+    extends type Mutation{
         createUser(user: UserInput): Success!
         loginUser(login: UserLogin): LoginSuccess!
     }

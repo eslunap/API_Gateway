@@ -14,7 +14,7 @@ const ordersTypeDefs = gql `
         id_usuario:Int
     }
 
-    type Mutation{
+    extends type Mutation{
         createOrder(order: OrderInput):Message!
     }
 `;
