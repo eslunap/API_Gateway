@@ -2,7 +2,7 @@ const { RESTDataSource } = require("apollo-datasource-rest");
 
 const {users_api_url} =require('../server');
 
-class CountsAPI extends RESTDataSource{
+class UsersAPI extends RESTDataSource{
     constructor(){
         super();
         this.baseURL = users_api_url;
@@ -28,3 +28,5 @@ class CountsAPI extends RESTDataSource{
         return await this.post(`/login`,login);
     }
 }
+
+module.exports = UsersAPI;
