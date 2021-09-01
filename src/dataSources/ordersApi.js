@@ -8,6 +8,7 @@ class OrdersAPI extends RESTDataSource{
     }
 
     async createOrder(order){
+        console.log(order)
         return await this.post('/order',{ ...order});
     }
 
