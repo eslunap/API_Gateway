@@ -4,7 +4,9 @@
   "description": "Api-Gateway-librería",
   "main": "src/index",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev":"nodemon src/index.js"
+
   },
   "author": "Estefany Luna",
   "license": "ISC",
@@ -13,6 +15,7 @@
     "apollo-server": "^3.2.0",
     "graphql": "^15.5.1",
     "lodash": "^4.17.21",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.1",
+    "nodemon": "^2.0.12"
   }
 }
