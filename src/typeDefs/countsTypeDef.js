@@ -12,7 +12,7 @@ const countsTypeDefs = gql`
     }
 
     input CountInput {
-        userId: String!
+        userId: Int
         monto: Int!
     }
     

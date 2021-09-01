@@ -8,9 +8,9 @@ const countsResolver = {
             }
         },
         countByUserId:(_, {transaction }, {dataSources, userIdToken})=>{
-            console.log(userIdToken)
-            console.log(transaction.userId)
-            console.log("-----")
+            //console.log(userIdToken)
+            //console.log(transaction.userId)
+            //console.log("-----")
             if(transaction.userId==userIdToken){
                 return dataSources.usersAPI.countByUserId(transaction)
             }else{

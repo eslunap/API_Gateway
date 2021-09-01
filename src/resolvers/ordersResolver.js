@@ -6,9 +6,16 @@ const ordersResolver = {
 
     },
     Mutation:{
-        createOrder:(_, {order},{dataSources})=> {
-            return dataSources.ordersAPI.createOrder(order)
-        },
+        createOrder:(_, {order},{dataSources, userIdToken})=> {
+            console.log(userIdToken)
+            console.log(order.id_usuario)
+            console.log("-----")
+            if(order.id_usuario==userIdToken){
+                return dataSources.ordersAPI.createOrder(order)
+            }else{
+                return null
+            }
+        }
 
     }
 
