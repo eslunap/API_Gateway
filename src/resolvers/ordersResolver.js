@@ -11,6 +11,7 @@ const ordersResolver = {
             console.log(order.id_usuario)
             console.log("-----")
             if(order.id_usuario==userIdToken){
+                console.log("prueba")
                 return dataSources.ordersAPI.createOrder(order)
             }else{
                 return null
