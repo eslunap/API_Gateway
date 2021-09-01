@@ -15,7 +15,7 @@ class UsersAPI extends RESTDataSource{
 
     async countByUserId(transaction){
         transaction = new Object(JSON.parse(JSON.stringify(transaction)));
-        return await this.put(`/counts/${userId}`);
+        return await this.put('/counts',transaction);
     }
 
     async createUser(user){

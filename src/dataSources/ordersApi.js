@@ -11,6 +11,10 @@ class OrdersAPI extends RESTDataSource{
         return await this.post('/order',{ ...order});
     }
 
+    async getOrder(orderId){
+        return await this.get('/order',{ ...orderId});
+    }
+
 }
 
 module.exports = OrdersAPI;

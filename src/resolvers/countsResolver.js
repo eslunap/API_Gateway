@@ -7,7 +7,7 @@ const countsResolver = {
                 return null
             }
         },
-        countByUserId:(_, {transaction}, {dataSources, userIdToken})=>{
+        countByUserId:(_, {transaction, userId}, {dataSources, userIdToken})=>{
             if(transaction.userId==userIdToken){
                 return dataSources.usersAPI.countByUserId(userId)
             }else{

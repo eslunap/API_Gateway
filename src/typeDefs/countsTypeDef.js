@@ -3,7 +3,7 @@ const { gql } = require('apollo-server');
 const countsTypeDefs = gql`
 
     type Message{
-        mensaje: String!
+        mensaje: String
     }
 
     input CountTransactionInput{
@@ -16,8 +16,8 @@ const countsTypeDefs = gql`
     }
     
     extend type Mutation {
-        createCount(count: CountInput): Message!
-        countByUserId(transaction: CountTransactionInput): Message!
+        createCount(count: CountInput): Message
+        countByUserId(userId:String, transaction: CountTransactionInput): Message!
     }
 `;
 
