@@ -9,15 +9,16 @@ const authentication = async ({ req }) => {
         return { userIdToken: null}
     else{
         try{
-            console.log("1")
+           // console.log("1")
             let requestOptions = {method:'POST',headers:{"Content-Type":"application/json"},body: JSON.stringify({ token}), redirect: 'follow'};
-            console.log("2")
+            //console.log("2")
             let response = await fetch(`${serverConfig.users_api_url}/token/`, requestOptions)
-            console.log("3")
+           //console.log("3",await response.json())
 
             if (response.status != 200) throw new ApolloError(`SESION INACTIVA - ${401}`, 401)
+                console.log("sesion inactiva")
 
-            return { userIdToken: (await response.json()).UserId };
+            return { userIdToken: (await response.json()).id };
             
         }
         catch(error){
