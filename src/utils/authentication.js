@@ -16,7 +16,7 @@ const authentication = async ({ req }) => {
            //console.log("3",await response.json())
 
             if (response.status != 200) throw new ApolloError(`SESION INACTIVA - ${401}`, 401)
-                console.log("sesion inactiva")
+                //console.log("sesion inactiva")
 
             return { userIdToken: (await response.json()).id };
             
