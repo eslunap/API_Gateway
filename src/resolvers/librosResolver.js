@@ -37,11 +37,11 @@ const librosResolver = {
                 return null
             }
         },
-        deleteLibroById:(_, {bookId},{dataSources, userIdToken})=>{
+        deleteLibroById:(_, {id},{dataSources, userIdToken})=>{
             if (userIdToken){
-                console.log(userIdToken)
+                console.log(id)
                 console.log("-----")
-                return dataSources.booksAPI.deleteLibroById(bookId);
+                return dataSources.booksAPI.deleteLibroById(id);
             }else{
                 console.log("else")
                 return null

@@ -28,9 +28,9 @@ class booksApi extends RESTDataSource {
         return await this.put('/libro',{ ...libro});
     }
 
-    async deleteLibroById(bookId){
+    async deleteLibroById(id){
         console.log("1")
-        return await this.delete('/libro',{...bookId});
+        return await this.delete('/libro',{...id});
     }
 
     async updateCantidad(cantidad){

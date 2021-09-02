@@ -53,7 +53,7 @@ const librosTypeDefs = gql`
         changeLibros(libro: ChangeLibrosInput): Message
         registerLibros(libros: LibrosInput): MessageLibros
         updateCantidad(cantidad:UpdateCantidadInput): Message
-        deleteLibroById(bookId: Int): Message
+        deleteLibroById(id: DeleteLibroInput): Message
 
     }
 `;
