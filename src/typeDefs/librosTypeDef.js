@@ -8,7 +8,10 @@ const librosTypeDefs = gql`
         descripcion: String
         precio: Int
         cantidad: Int
-        imagen: String
+        imagen: String,
+        AuthorId:Int,
+        CategoryId:Int,
+        EditorialId:Int
     }
 
     type Message{
@@ -28,7 +31,10 @@ const librosTypeDefs = gql`
         descripcion: String
         precio: Int
         cantidad: Int
-        imagen: String
+        imagen: String,
+        AuthorId:Int,
+        CategoryId:Int,
+        EditorialId:Int
     }
 
     input ChangeLibrosInput{
