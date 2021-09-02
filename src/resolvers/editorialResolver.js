@@ -11,9 +11,11 @@ const EditorialsResolver = {
         }
     },
     Mutation: {
-        registerEditorial:(_, {Editorial},{dataSources}) => {
-            if (Editorial.userId == userIdToken){
-                return dataSources.booksAPI.registerEditorial();
+        registerEditorial:(_, {editorial},{dataSources, userIdToken}) => {
+            if (userIdToken){
+                console.log(userIdToken)
+                console.log("-----")
+                return dataSources.booksAPI.registerEditorial(editorial);
             }else{
                 return null
             }

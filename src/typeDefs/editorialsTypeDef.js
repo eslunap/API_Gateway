@@ -20,7 +20,7 @@ const editorialsTypeDefs = gql`
     }
 
     extend type Mutation {
-        registerEditorial(editorial: EditorialInput): Editorial
+        registerEditorial(editorial: EditorialInput): Success
 
     }
 `;
