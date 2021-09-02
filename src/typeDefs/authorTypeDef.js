@@ -1,10 +1,14 @@
 const { gql } = require('apollo-server');
 
 const authorsTypeDefs = gql`
-    type Author  {
+    type Author2  {
         Id: Int
-        nombre: String!
-        
+        nombre: String!  
+    }
+
+    type Author1{
+        Author:[Author2]
+
     }
 
     input AuthorInput {
@@ -12,7 +16,7 @@ const authorsTypeDefs = gql`
     }
 
     type Query  {
-        authorsBybook: [Author]
+        authorsBybook: Author1
 
     }
 

@@ -43,8 +43,10 @@ class booksApi extends RESTDataSource {
         return await this.post ('/producto/imagen',{...Imagen});
     }
 
-    async authorBybook() {
-        return await this.get('/author/');
+    async authorsBybook() {
+        const respuesta = await this.get('/author');
+        console.log(respuesta)
+        return await this.get('/author');
     }
 
     async registerAuthor(author) {
@@ -53,7 +55,7 @@ class booksApi extends RESTDataSource {
     } 
 
     async categoriasBybook() {
-        return await this.get('/categorias/');
+        return await this.get('/categorias');
 
     }
 
