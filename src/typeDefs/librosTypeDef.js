@@ -8,12 +8,10 @@ const librosTypeDefs = gql`
     }
     type Categoria  {
         id: Int
-        nombre: String! 
         tipo: String! 
     }
     type Author  {
         id: Int
-        nombre: String! 
         nombres: String! 
     }
 
@@ -28,6 +26,24 @@ const librosTypeDefs = gql`
         Author: Author,
         Category:Categoria,
         Editorial:Editorial
+    }
+
+    
+    type Products  {
+        id: Int
+        titulo: String
+        ano: Int
+        descripcion: String
+        precio: Int
+        cantidad: Int
+        imagen: String,
+        Author: Author,
+        Category:Categoria,
+        Editorial:Editorial
+    }
+
+    type Productos{
+        Productos:Products
     }
 
     type Libros{
@@ -70,7 +86,7 @@ const librosTypeDefs = gql`
 
     extend type Query  {
         librossBybook : Libros
-        libroBybookId (libroId: Int): Libros
+        libroBybookId (id: Int): Productos
 
     }
 

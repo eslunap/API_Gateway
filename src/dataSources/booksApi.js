@@ -14,8 +14,8 @@ class booksApi extends RESTDataSource {
         return respuesta;
     }
 
-    async libroBybookId(libroId) {
-        return this.get('/libro/' + libroId);
+    async libroBybookId(id) {
+        return this.get(`/libros/buscar/${id}`);
     }
 
     async registerLibros(libros) {

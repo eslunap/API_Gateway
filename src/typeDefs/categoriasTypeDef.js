@@ -2,8 +2,8 @@ const { gql } = require('apollo-server');
 
 const categoriasTypeDefs = gql`
     type Categoria  {
-        Id: Int
-        nombre: String!
+        id: Int
+        tipo: String!
         
     }
 

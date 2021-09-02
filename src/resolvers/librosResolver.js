@@ -10,10 +10,10 @@ const librosResolver = {
                 return null
             }
         },
-        libroBybookId: async (_, {libroId}, {dataSources,userIdToken})=> {
-            const respuesta = await dataSources.booksAPI.libroBybookId();
+        libroBybookId: async (_, {id}, {dataSources})=> {
+            const respuesta = await dataSources.booksAPI.libroBybookId(id);
             console.log(respuesta)
-            return respuesta
+            return {Productos: respuesta.products};
 
             // if (libroId.userId == userIdToken){
             //     return dataSources.booksAPI.libroBybookId();

@@ -2,7 +2,7 @@ const { gql } = require('apollo-server');
 
 const editorialsTypeDefs = gql`
     type Editorial  {
-        Id: Int
+        id: Int
         nombre: String!
         
     }
