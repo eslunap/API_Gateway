@@ -65,7 +65,10 @@ class booksApi extends RESTDataSource {
     } 
 
     async editorialsBybook() {
-        return await this.get('/editorial/');
+        const respuesta = await this.get('/editorial');
+        //return await this.get('/editorial/');
+        console.log(respuesta)
+        return respuesta;
 
     }
 

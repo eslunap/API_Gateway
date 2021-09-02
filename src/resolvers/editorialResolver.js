@@ -1,8 +1,10 @@
 const EditorialsResolver = {
     Query: {
-        editorialsBybook: (_, __, {dataSources,userIdToken})=> {
-            if (userId == userIdToken){
-                return dataSources.booksAPI.editorialsBybook();
+        editorialsBybook: async (_, __, {dataSources,userIdToken})=> {
+            if (userIdToken){
+                const respuesta = await dataSources.booksAPI.editorialsBybook();
+                console.log(respuesta)
+                return { Editorial1: respuesta.editorial};
             }else{
                 return null
             }

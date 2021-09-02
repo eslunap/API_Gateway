@@ -1,10 +1,13 @@
 const { gql } = require('apollo-server');
 
 const editorialsTypeDefs = gql`
-    type Editorial  {
+    type Editorial2  {
         id: Int
         nombre: String!
         
+    }
+    type Editorial1{
+        Editorial1: [Editorial2]
     }
 
     input EditorialInput {
@@ -12,7 +15,7 @@ const editorialsTypeDefs = gql`
     }
 
     extend type Query  {
-        editorialsBybook: [Editorial]
+        editorialsBybook: Editorial1
 
     }
 
