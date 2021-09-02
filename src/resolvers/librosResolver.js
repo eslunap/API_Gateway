@@ -1,19 +1,25 @@
 const librosResolver = {
     Query: {
-        librossBybook: (_, __, {dataSources,userIdToken})=> {
+        librossBybook: async (_, __, {dataSources,userIdToken})=> {
+            console.log(userIdToken)
             if (userIdToken){
-                console.log("if",userIdToken)
-                return dataSources.booksAPI.librossBybook();
+                const respuesta = await dataSources.booksAPI.librossBybook();
+                console.log(respuesta)
+                return { Libros: respuesta.libros };
             }else{
                 return null
             }
         },
-        libroBybookId: (_, {libroId}, {dataSources,userIdToken})=> {
-            if (libroId.userId == userIdToken){
-                return dataSources.booksAPI.libroBybookId();
-            }else{
-                return null
-            }
+        libroBybookId: async (_, {libroId}, {dataSources,userIdToken})=> {
+            const respuesta = await dataSources.booksAPI.libroBybookId();
+            console.log(respuesta)
+            return respuesta
+
+            // if (libroId.userId == userIdToken){
+            //     return dataSources.booksAPI.libroBybookId();
+            // }else{
+            //     return null
+            // }
         }
     },
     Mutation: {

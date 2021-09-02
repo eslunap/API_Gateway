@@ -3,16 +3,18 @@ const { gql } = require('apollo-server');
 const librosTypeDefs = gql`
 
     type Editorial  {
-        Id: Int
+        id: Int
         nombre: String!        
     }
     type Categoria  {
-        Id: Int
-        nombre: String!        
+        id: Int
+        nombre: String! 
+        tipo: String! 
     }
     type Author  {
-        Id: Int
+        id: Int
         nombre: String! 
+        nombres: String! 
     }
 
     type Libros2  {

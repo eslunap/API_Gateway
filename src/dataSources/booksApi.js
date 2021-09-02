@@ -11,11 +11,11 @@ class booksApi extends RESTDataSource {
     async librossBybook() {
         const respuesta = await this.get('/libros');
         console.log(respuesta)
-        return await this.get('/libros');
+        return respuesta;
     }
 
-    async libroBybookId() {
-        return await this.get('/libro/:id');
+    async libroBybookId(libroId) {
+        return this.get('/libro/' + libroId);
     }
 
     async registerLibros(libros) {
@@ -27,7 +27,7 @@ class booksApi extends RESTDataSource {
     async changeLibros(libro){
         const respuesta = await this.put('/libro',{ ...libro});
         console.log(respuesta)
-        return await this.put('/libro',{ ...libro});
+        return respuesta
     }
 
     async deleteLibroById(id){
