@@ -1,8 +1,10 @@
 const categoriasResolver = {
     Query: {
-        categoriasBybook: (_, __, {dataSources,userIdToken})=> {
-            if (userId == userIdToken){
-                return dataSources.booksAPI.categoriasBybook();
+        categoriasBybook: async (_, __, {dataSources,userIdToken})=> {
+            if (userIdToken){
+                const respuesta = await dataSources.booksAPI.categoriasBybook();
+                console.log(respuesta)
+                return {Categoria1: respuesta.categorias }
             }else{
                 return null
             }

@@ -1,9 +1,8 @@
 const { gql } = require('apollo-server');
 
 const categoriasTypeDefs = gql`
-    type Categoria  {
-        id: Int
-        tipo: String!
+    type Categoria1  {
+        Categoria1:[Categoria]
         
     }
 
@@ -12,7 +11,7 @@ const categoriasTypeDefs = gql`
     }
 
     extend type Query  {
-        categoriasBybook: [Categoria]
+        categoriasBybook: Categoria1
 
     }
 
