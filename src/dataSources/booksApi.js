@@ -9,7 +9,9 @@ class booksApi extends RESTDataSource {
     }
 
     async librossBybook() {
-        return await this.get('/libro');
+        const respuesta = await this.get('/libros');
+        console.log(respuesta)
+        return await this.get('/libros');
     }
 
     async libroBybookId() {

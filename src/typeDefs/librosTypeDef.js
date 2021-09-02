@@ -1,7 +1,21 @@
 const { gql } = require('apollo-server');
 
 const librosTypeDefs = gql`
-    type Libros  {
+
+    type Editorial  {
+        Id: Int
+        nombre: String!        
+    }
+    type Categoria  {
+        Id: Int
+        nombre: String!        
+    }
+    type Author  {
+        Id: Int
+        nombre: String! 
+    }
+
+    type Libros2  {
         id: Int
         titulo: String
         ano: Int
@@ -9,9 +23,13 @@ const librosTypeDefs = gql`
         precio: Int
         cantidad: Int
         imagen: String,
-        AuthorId:Int,
-        CategoryId:Int,
-        EditorialId:Int
+        Author: Author,
+        Category:Categoria,
+        Editorial:Editorial
+    }
+
+    type Libros{
+        Libros:[Libros2]
     }
 
     type Message{
@@ -49,7 +67,7 @@ const librosTypeDefs = gql`
     }
 
     extend type Query  {
-        librossBybook : [Libros]
+        librossBybook : Libros
         libroBybookId (libroId: Int): Libros
 
     }
@@ -63,8 +81,5 @@ const librosTypeDefs = gql`
 
     }
 `;
-
-    //PUT de librosId y POST imagen
-
 
 module.exports =  librosTypeDefs;

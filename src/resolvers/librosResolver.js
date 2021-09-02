@@ -1,7 +1,8 @@
 const librosResolver = {
     Query: {
         librossBybook: (_, __, {dataSources,userIdToken})=> {
-            if (userId == userIdToken){
+            if (userIdToken){
+                console.log("if",userIdToken)
                 return dataSources.booksAPI.librossBybook();
             }else{
                 return null
