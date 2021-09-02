@@ -1,7 +1,7 @@
 const authorResolver = {
     Query: {
         authorsBybook: (_, __, {dataSources,userIdToken})=> {
-            if (userId == userIdToken){
+            if (userIdToken){
                 return dataSources.booksAPI.authorsBybook();
             }else{
                 return null
