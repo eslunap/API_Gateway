@@ -2,24 +2,44 @@ const { gql } = require('apollo-server');
 
 const librosTypeDefs = gql`
     type Libros  {
-        Id: Int
-        Titulo: String
-        Ano: Int
-        Descripcion: String
-        Precio: Int
-        Cantidad: Int
-        Imagen: String
-
-        
+        id: Int
+        titulo: String
+        ano: Int
+        descripcion: String
+        precio: Int
+        cantidad: Int
+        imagen: String
     }
 
+    type Message{
+        mensaje: String
+    }
+
+    type MessageLibros{
+        success: String
+    }
+
+    input DeleteLibroInput{
+        id: Int
+    }
     input LibrosInput {
-        Titulo: String
-        Ano: Int
-        Descripcion: String
-        Precio: Int
-        Cantidad: Int
-        Imagen: String 
+        titulo: String
+        ano: Int
+        descripcion: String
+        precio: Int
+        cantidad: Int
+        imagen: String
+    }
+
+    input ChangeLibrosInput{
+        id: Int
+        cantidad: Int
+        precio: Int
+    }
+
+    input UpdateCantidadInput{
+        id: Int
+        cantidad: Int
     }
 
     extend type Query  {
@@ -30,7 +50,10 @@ const librosTypeDefs = gql`
 
 
     extend type Mutation {
-        registerLibros(libros: LibrosInput): Libros
+        changeLibros(libro: ChangeLibrosInput): Message
+        registerLibros(libros: LibrosInput): MessageLibros
+        updateCantidad(cantidad:UpdateCantidadInput): Message
+        deleteLibroById(bookId: Int): Message
 
     }
 `;

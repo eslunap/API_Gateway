@@ -13,6 +13,9 @@ const ordersTypeDefs = gql `
         mensaje: String
     }
     
+    input getOrder{
+        id: String
+    }
     input OrderInput {
         fecha:String
         precio:Int
@@ -22,7 +25,7 @@ const ordersTypeDefs = gql `
     }
 
     extend type Query{
-        getOrder(orderId:String): Order
+        getOrder(id: String!): Order
     }
 
     extend type Mutation{

@@ -16,12 +16,25 @@ class booksApi extends RESTDataSource {
         return await this.get('/libro/:id');
     }
 
-    async registerLibros(Libros) {
-        return await this.post ('/libros',{...Libros});
+    async registerLibros(libros) {
+        // const respuesta=await this.post ('/libro',{...libros});
+        // console.log(respuesta)
+        return await this.post ('/libro',{...libros});
     }
 
-    async registerLibros(Libros) {
-        return await this.post ('/libros',{...Libros});
+    async changeLibros(libro){
+        const respuesta = await this.put('/libro',{ ...libro});
+        console.log(respuesta)
+        return await this.put('/libro',{ ...libro});
+    }
+
+    async deleteLibroById(bookId){
+        console.log("1")
+        return await this.delete('/libro',{...bookId});
+    }
+
+    async updateCantidad(cantidad){
+        return await this.put('/libros/cantidad',{ ...cantidad});
     }
 
     async registerImagen(Imagen) {
@@ -57,7 +70,7 @@ class booksApi extends RESTDataSource {
 
     } 
 
-    
+   
 }
 
 module.exports = booksApi;

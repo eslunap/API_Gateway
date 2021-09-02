@@ -1,7 +1,9 @@
 const ordersResolver = {
     Query:{
-        getOrder:(_, {orderId},{dataSources})=>{
-            return dataSources.ordersAPI.getOrder(orderId)
+        getOrder:(_, {id},{dataSources})=>{
+            console.log(id)
+            console.log("-----")
+            return dataSources.ordersAPI.getOrder(id)
         },
 
     },

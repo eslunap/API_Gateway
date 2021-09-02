@@ -16,10 +16,44 @@ const librosResolver = {
         }
     },
     Mutation: {
-        registerLibros:(_, {libros},{dataSources}) => {
-            if (libros.userId == userIdToken){
-                return dataSources.booksApi.registerLibros();
+        registerLibros:(_, {libros},{dataSources,userIdToken}) => {
+            if (userIdToken){
+                console.log(userIdToken)
+                console.log("-----")
+                console.log("if register")
+                return dataSources.booksAPI.registerLibros(libros);
             }else{
+                return null
+            }
+        },
+        changeLibros:(_,{libro},{dataSources, userIdToken})=>{
+            console.log(userIdToken)
+            console.log("-----")
+            if (userIdToken){
+                console.log("if")
+                return dataSources.booksAPI.changeLibros(libro);
+            }else{
+                console.log("else")
+                return null
+            }
+        },
+        deleteLibroById:(_, {bookId},{dataSources, userIdToken})=>{
+            if (userIdToken){
+                console.log(userIdToken)
+                console.log("-----")
+                return dataSources.booksAPI.deleteLibroById(bookId);
+            }else{
+                console.log("else")
+                return null
+            }
+        },
+        updateCantidad:(_,{cantidad},{dataSources, userIdToken})=>{
+            if(userIdToken){
+                console.log(userIdToken)
+                console.log("------")
+                return dataSources.booksAPI.updateCantidad(cantidad);
+            }else{
+                console.log("else")
                 return null
             }
         }
