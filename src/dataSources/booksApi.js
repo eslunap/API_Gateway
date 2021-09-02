@@ -46,10 +46,11 @@ class booksApi extends RESTDataSource {
     async authorsBybook() {
         const respuesta = await this.get('/author');
         console.log(respuesta)
-        return await this.get('/author');
+        return respuesta;
     }
 
     async registerAuthor(author) {
+       // console.log(await this.post ('/author',{...author}));
         return await this.post ('/author',{...author});
 
     } 

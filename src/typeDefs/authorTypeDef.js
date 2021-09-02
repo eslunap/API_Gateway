@@ -1,18 +1,13 @@
 const { gql } = require('apollo-server');
 
 const authorsTypeDefs = gql`
-    type Author2  {
-        Id: Int
-        nombre: String!  
-    }
-
     type Author1{
-        Author:[Author2]
+        Author1:[Author]
 
     }
 
     input AuthorInput {
-        nombre: String
+        nombres: String
     }
 
     type Query  {
@@ -21,7 +16,7 @@ const authorsTypeDefs = gql`
     }
 
     type Mutation {
-        registerAuthor(author: AuthorInput): Author
+        registerAuthor(author: AuthorInput): Success
 
     }
 `;

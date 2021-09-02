@@ -8,7 +8,7 @@ const categoriasTypeDefs = gql`
     }
 
     input CategoriaInput {
-        nombre: String
+        tipo: String
     }
 
     extend type Query  {
@@ -17,7 +17,7 @@ const categoriasTypeDefs = gql`
     }
 
     extend type Mutation {
-        registerCategoria(categoria: CategoriaInput): Categoria
+        registerCategoria(categoria: CategoriaInput): Success
 
     }
 `;

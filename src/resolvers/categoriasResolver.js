@@ -9,9 +9,9 @@ const categoriasResolver = {
         }
     },
     Mutation: {
-        registerCategoria:(_, {categoria},{dataSources}) => {
-            if (categoria.userId == userIdToken){
-                return dataSources.booksAPI.registerCategoria();
+        registerCategoria:(_, {categoria},{dataSources,userIdToken}) => {
+            if (userIdToken){
+                return dataSources.booksAPI.registerCategoria(categoria);
             }else{
                 return null
             }
