@@ -1,9 +1,10 @@
 const ordersResolver = {
     Query:{
-        getOrder:(_, {id},{dataSources})=>{
+        getOrder: async(_, {id},{dataSources})=>{
             console.log(id)
             console.log("-----")
-            return dataSources.ordersAPI.getOrder(id)
+            const respuesta = await dataSources.ordersAPI.getOrder(id)
+            return {...respuesta.order, id: respuesta.order._id}
         },
 
     },

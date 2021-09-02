@@ -14,9 +14,9 @@ class OrdersAPI extends RESTDataSource{
 
     async getOrder(id){
         console.log(id)
-        const respuesta = await this.get('/order',{ ...id});
+        const respuesta = await this.get(`/order/${id}`);
         console.log(respuesta)
-        return await this.get('/order',{ ...id});
+        return respuesta;
     }
 
 }

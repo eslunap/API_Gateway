@@ -2,6 +2,7 @@ const { gql } = require('apollo-server');
 
 const ordersTypeDefs = gql `
     type Order{
+        id: ID 
         fecha:String
         precio:Int
         cantidad:Int
@@ -13,9 +14,8 @@ const ordersTypeDefs = gql `
         mensaje: String
     }
     
-    input getOrder{
-        id: String
-    }
+   
+    
     input OrderInput {
         fecha:String
         precio:Int
@@ -25,7 +25,7 @@ const ordersTypeDefs = gql `
     }
 
     extend type Query{
-        getOrder(id: String!): Order
+        getOrder(id: ID): Order
     }
 
     extend type Mutation{
